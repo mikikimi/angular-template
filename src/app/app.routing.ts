@@ -5,14 +5,26 @@ export const AppRoutes: Routes = [
   {
     path: '',
     component: IndexComponent,
-    data: { title: 'page_name.index' }
+    data: { title: 'English Stuffs' }
   },
   {
-    path: 'bluep',
-    loadChildren: './pages/static-pages.module#StaticPagesModule'
+    path: 'blueup',
+    loadChildren: './pages/blueup/blueup.module#BlueupModule'
+  },
+  {
+    path: 'collins',
+    loadChildren: './pages/collins/collins.module#CollinsModule'
+  },
+  {
+    path: 'effortless-english',
+    loadChildren: './pages/effortless-english/effortless-english.module#EffortlessEnglishModule'
   },
   {
     path: 'oxfords',
     loadChildren: './pages/oxfords/oxfords.module#OxfordsModule'
+  },
+  {
+    path: 'others',
+    loadChildren: './pages/others/others.module#OthersModule'
   }
 ];

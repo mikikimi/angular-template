@@ -4,6 +4,7 @@ import { OxfordsComponent } from '@pages/oxfords/oxfords.component';
 export const OxfordsRoutes: Routes = [
   {
     path: '',
-    component: OxfordsComponent
+    component: OxfordsComponent,
+    data: { title: 'Oxfords' }
   }
 ];
