@@ -5,7 +5,7 @@
 /tmp
 /out-tsc
 /src/assets/audio/*
-/src/assets/screenshot/*
+/src/assets/images/*
 
 # dependencies
 /node_modules
