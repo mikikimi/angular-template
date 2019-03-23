@@ -1,5 +1,6 @@
 export const BaseURLs = {
   // base routes to lazily loaded modules
+  masterIndex: 'master-index',
   ieltsBasicSpeaking: 'ielts-basic-speaking',
   oxfords: 'oxfords'
 };

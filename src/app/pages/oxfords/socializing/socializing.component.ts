@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseURLs } from 'app/routes';
 
 @Component({
   selector: 'app-socializing',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./socializing.component.scss']
 })
 export class SocializingComponent implements OnInit {
-
+  url = BaseURLs;
   constructor() { }
 
   ngOnInit() {

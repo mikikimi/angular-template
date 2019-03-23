@@ -5,6 +5,10 @@ import { BaseURLs } from 'app/routes';
 export const AppRoutes: Routes = [
   {
     path: '',
+    redirectTo: BaseURLs.masterIndex, pathMatch: 'full'
+  },
+  {
+    path: BaseURLs.masterIndex,
     component: MasterIndexComponent,
     data: { title: 'Master Index of English Stuffs' }
   },

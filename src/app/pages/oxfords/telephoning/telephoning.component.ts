@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseURLs } from 'app/routes';
 
 @Component({
   selector: 'app-telephoning',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./telephoning.component.scss']
 })
 export class TelephoningComponent implements OnInit {
-
+  url = BaseURLs;
   constructor() { }
 
   ngOnInit() {
