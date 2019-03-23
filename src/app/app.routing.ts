@@ -24,8 +24,8 @@ export const AppRoutes: Routes = [
     loadChildren: './pages/oxfords/oxfords.module#OxfordsModule'
   },
   {
-    path: 'ielts',
-    loadChildren: './pages/others/others.module#OthersModule'
+    path: 'ielts-basic-speaking',
+    loadChildren: './pages/ielts-basic-speaking/ielts-basic-speaking.module#IeltsBasicSpeakingModule'
   },
   {
     path: 'others',

@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/src/assets/audio/*
+/src/assets/screenshot/*
 
 # dependencies
 /node_modules
