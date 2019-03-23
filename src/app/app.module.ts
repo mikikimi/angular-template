@@ -4,9 +4,9 @@ import { RouterModule } from '@angular/router';
 import { AppRoutes } from 'app/app.routing';
 
 import { AppComponent } from './app.component';
-import { SharedComponent } from '@shared/shared/shared.component';
+import { SharedComponent } from '@shared/shared.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from '@shared/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { MainFooterComponent } from '@components/main-footer/main-footer.component';
 import { MainHeaderComponent } from '@components/main-header/main-header.component';
 import { MasterIndexComponent } from '@pages/master-index/master-index.component';

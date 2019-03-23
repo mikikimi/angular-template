@@ -4,9 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ScreenshotWithAudioComponent } from '@templates/screenshot-with-audio/screenshot-with-audio.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ScreenshotWithAudioComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -18,6 +21,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     FormsModule,
     ReactiveFormsModule,
     TooltipModule,
+    ScreenshotWithAudioComponent
     // BrowserAnimationsModule
   ]
 })

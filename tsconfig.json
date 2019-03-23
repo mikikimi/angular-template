@@ -5,7 +5,8 @@
     "paths": {
       "@components/*": [ "app/components/*" ],
       "@pages/*": [ "app/pages/*" ],
-      "@shared/*": [ "app/shared/*" ]
+      "@shared/*": [ "app/shared/*" ],
+      "@templates/*": [ "app/shared/templates/*" ]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

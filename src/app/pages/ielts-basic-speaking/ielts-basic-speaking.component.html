@@ -1,37 +1,8 @@
 <h1 class="page-heading">Basic ielts speaking</h1>
-<a class="text-dark" href="/master-index"><i class="fas fa-chevron-circle-left"></i> Back to Index</a>
-<h2 class="audio-heading" [class.active]="isOpenAudioBlock" (click)="toggleAudioBlock()">Audio Tracks</h2>
-<ul class="audio-tracks" [class.active]="isOpenAudioBlock">
-  <li *ngFor="let item of arr(30).fill(0); let i = index;">
-    <p>Track {{i+1}}</p>
-    <audio class="audio" controls loop preload="none"><source [src]="'assets/audio/ielts-basic-speaking/' + i < 10 ? '0' + i+1 : i+1 + '.mp3'" type="audio/mp3"></audio>
-  </li>
-</ul>
-<ul class="list">
-  <li *ngFor="let item of arr(30).fill(0); let i = index;">
-    <p class="image-title">{{i}}</p>
-    <p><img [attr.data-src]="'assets/screenshot/ielts-basic-speaking/IMG_00' + i < 10 ? '0' + i+2 : i+2 + '.jpg'"/></p>
-  </li>
-</ul>
-<div class="to-top-form" id="toEleForm">
-  <div class="audio-controls">
-    <span class="speed-rate">Playing: <span id="playingFile">Track 01</span></span>
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-secondary btn-media" id="stepBackward"><i class="fas fa-step-backward"></i></button>
-      <button type="button" class="btn btn-secondary btn-media" id="playPauseAudio"><i class="fa fa-play"></i><i class="fa fa-pause"></i></button>
-      <button type="button" class="btn btn-secondary btn-media" id="stepForward"><i class="fas fa-step-forward"></i></button>
-    </div>
-    <span class="speed-rate">Rate: <span id="curSpeed">1.0</span></span>
-    <div class="btn-group" role="group">
-      <button type="button" id="btnDecrease" class="btn btn-secondary btn-rate"><i class="fas fa-minus"></i></button>
-      <button type="button" id="btnIncrease" class="btn btn-secondary btn-rate"><i class="fas fa-plus"></i></button>
-      <button type="button" id="btnLoop" class="btn btn-secondary btn-rate"><i class="fas fa-sync-alt"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-      <button type="button" id="toTop" class="btn btn-secondary btn-top"><i class="fas fa-arrow-up"></i></button>
-    </div>
-    <form id="triggerPlay" class="btn-group" role="group">
-      <input class="form-control num-of-track" type="number" id="numOfTrack">
-    </form>
-  </div>
-</div>
+<a class="text-dark" href="/"><i class="fas fa-chevron-circle-left"></i> Back to Index</a>
+<screenshot-with-audio
+  [audioLength]="30"
+  [audioPath]="'ielts-basic-speaking/'"
+  [screenLength]="83"
+  [screenPath]="'ielts-basic-speaking/IMG_00'"
+  ></screenshot-with-audio>

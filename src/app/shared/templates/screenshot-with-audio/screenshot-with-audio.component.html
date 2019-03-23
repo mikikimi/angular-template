@@ -1,0 +1,59 @@
+<h2 class="audio-heading" [class.active]="isOpenAudioBlock" (click)="toggleAudioBlock()">Audio Tracks</h2>
+<ul class="audio-tracks" [class.active]="isOpenAudioBlock">
+  <li [ngClass]="{'isFixedTop': curPlayingIndex === i}" *ngFor="let item of arr(audioLength).fill(0); let i = index;">
+    <div class="inner">
+      <p>Track {{i+1}}</p>
+      <audio class="audio" [class.isFixedTop]="curPlayingIndex === i" controls [attr.loop]="loop ? loop : null" preload="none"
+             (play)="onPlayAudio(i, audioNamePrefix + (i < 9 ? '0' + (i+1) : (i+1)))"
+             (pause)="onPauseAudio(i)">
+        <source [src]="'assets/audio/' + audioPath + audioNamePrefix + (i < 9 ? '0' + (i+1) : (i+1)) + audioType" type="audio/mp3"></audio>
+    </div>
+  </li>
+</ul>
+<ul class="list">
+  <li *ngFor="let item of screenArray; let i = index;" [class.d-none]="i <= screenSkippedLength">
+    <p class="image-title">{{i}}</p>
+    <p class="image-element"><img [attr.data-src]="'assets/images/' + screenPath + (i < 8 ? '0' + (i+2) : (i+2) ) + screenType"/></p>
+  </li>
+</ul>
+<div class="control-block">
+  <div class="audio-controls">
+    <span class="speed-rate">Playing: <span>{{curPlayingTitle || 'None' }}</span></span>
+    <div class="button-group" role="group">
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curPlayingIndex <= -1"
+              (click)="onBackwardPlayingFile()">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button type="button" class="btn btn-secondary btn-control"
+              [class.playing]="audioState"
+              (click)="onTriggerPlayPauseAudio()">
+        <i class="fa fa-play"></i><i class="fa fa-pause"></i>
+      </button>
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curPlayingIndex >= audioArr?.length"
+              (click)="onForwardPlayingFile()"><i class="fas fa-step-forward"></i></button>
+    </div>
+    <span class="speed-rate">Rate: <span>{{curSpeed | number: 0}}</span></span>
+    <div class="button-group" role="group">
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curSpeed >= maxSpeed"
+              (click)="onDecreaseSpeed()"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curSpeed <= minSpeed"
+              (click)="onIncreaseSpeed()"><i class="fas fa-plus"></i></button>
+      <button type="button"
+              (click)="loop = !loop;" class="btn btn-secondary btn-control"
+              [class.active]="loop">
+        <i class="fas fa-sync-alt"></i></button>
+    </div>
+    <div class="button-group" role="group">
+      <button type="button" class="btn btn-secondary btn-control" title="To Top" (click)="toTop()"><i class="fas fa-arrow-up"></i></button>
+      <button type="button" class="btn btn-secondary btn-control" title="Collapse All" (click)="onHideAll()"><i class="fa fa-compress-arrows-alt"></i></button>
+      <button type="button" class="btn btn-secondary btn-control" title="Show All" (click)="onShowAll()"><i class="fas fa-compress"></i></button>
+    </div>
+    <div (click)="triggerPlay()" class="btn-group">
+      <input class="form-control num-of-track" type="number" [(ngModel)]="triggerPlayTrack">
+    </div>
+  </div>
+</div>

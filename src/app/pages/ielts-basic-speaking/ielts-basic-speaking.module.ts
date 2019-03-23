@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { IeltsBasicSpeakingRoutes } from '@pages/ielts-basic-speaking/ielts-basic-speaking.routing';
 import { IeltsBasicSpeakingComponent } from '@pages/ielts-basic-speaking/ielts-basic-speaking.component';
+import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { IeltsBasicSpeakingComponent } from '@pages/ielts-basic-speaking/ielts-b
   ],
   imports: [
     CommonModule,
+    SharedModule.forRoot(),
     RouterModule.forChild(IeltsBasicSpeakingRoutes)
   ]
 })
