@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IeltsBasicSpeakingComponent implements OnInit {
 
+  curSpeed = 1.0;
+
   constructor() { }
 
   ngOnInit() {
