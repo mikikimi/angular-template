@@ -8,6 +8,7 @@ import { NegotiatingComponent } from './negotiating/negotiating.component';
 import { TelephoningComponent } from './telephoning/telephoning.component';
 import { MeetingComponent } from './meeting/meeting.component';
 import { SocializingComponent } from './socializing/socializing.component';
+import { ReadNDiscoverDetailComponent } from './read-n-discover/read-n-discover-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SocializingComponent } from './socializing/socializing.component';
     NegotiatingComponent,
     TelephoningComponent,
     MeetingComponent,
-    SocializingComponent
+    SocializingComponent,
+    ReadNDiscoverDetailComponent
   ],
   imports: [
     RouterModule.forChild(OxfordsRoutes),
