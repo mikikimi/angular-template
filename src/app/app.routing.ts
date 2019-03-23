@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { IndexComponent } from '@pages/index/index.component';
+import { MasterIndexComponent } from '@pages/master-index/master-index.component';
 
 export const AppRoutes: Routes = [
   {
     path: '',
-    component: IndexComponent,
-    data: { title: 'English Stuffs' }
+    component: MasterIndexComponent,
+    data: { title: 'Master Index of English Stuffs' }
   },
   {
     path: 'blueup',
@@ -22,6 +22,10 @@ export const AppRoutes: Routes = [
   {
     path: 'oxfords',
     loadChildren: './pages/oxfords/oxfords.module#OxfordsModule'
+  },
+  {
+    path: 'ielts',
+    loadChildren: './pages/others/others.module#OthersModule'
   },
   {
     path: 'others',
