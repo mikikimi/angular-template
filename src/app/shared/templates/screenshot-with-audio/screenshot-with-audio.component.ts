@@ -29,7 +29,7 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
   @Input() screenLength;
   @Input() screenPath;
-  @Input() screenSkippedLength = 22;
+  @Input() screenSkippedLength = 0;
   @Input() screenType = '.jpg';
   @Input() curSpeed = 1.3;
 

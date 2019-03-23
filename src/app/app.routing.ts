@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MasterIndexComponent } from '@pages/master-index/master-index.component';
+import { BaseURLs } from 'app/routes';
 
 export const AppRoutes: Routes = [
   {
@@ -20,11 +21,11 @@ export const AppRoutes: Routes = [
     loadChildren: './pages/effortless-english/effortless-english.module#EffortlessEnglishModule'
   },
   {
-    path: 'oxfords',
+    path: BaseURLs.oxfords,
     loadChildren: './pages/oxfords/oxfords.module#OxfordsModule'
   },
   {
-    path: 'ielts-basic-speaking',
+    path: BaseURLs.ieltsBasicSpeaking,
     loadChildren: './pages/ielts-basic-speaking/ielts-basic-speaking.module#IeltsBasicSpeakingModule'
   },
   {

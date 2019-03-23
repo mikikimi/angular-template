@@ -3,10 +3,20 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
 import { OxfordsComponent } from '@pages/oxfords/oxfords.component';
 import { OxfordsRoutes } from '@pages/oxfords/oxfords.routing';
+import { ReadNDiscoverComponent } from './read-n-discover/read-n-discover.component';
+import { NegotiatingComponent } from './negotiating/negotiating.component';
+import { TelephoningComponent } from './telephoning/telephoning.component';
+import { MeetingComponent } from './meeting/meeting.component';
+import { SocializingComponent } from './socializing/socializing.component';
 
 @NgModule({
   declarations: [
-    OxfordsComponent
+    OxfordsComponent,
+    ReadNDiscoverComponent,
+    NegotiatingComponent,
+    TelephoningComponent,
+    MeetingComponent,
+    SocializingComponent
   ],
   imports: [
     RouterModule.forChild(OxfordsRoutes),

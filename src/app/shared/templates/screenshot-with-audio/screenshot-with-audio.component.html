@@ -11,9 +11,9 @@
   </li>
 </ul>
 <ul class="list">
-  <li *ngFor="let item of screenArray; let i = index;" [class.d-none]="i <= screenSkippedLength">
-    <p class="image-title">{{i}}</p>
-    <p class="image-element"><img [attr.data-src]="'assets/images/' + screenPath + (i < 8 ? '0' + (i+2) : (i+2) ) + screenType"/></p>
+  <li *ngFor="let item of screenArray; let i = index;" [class.d-none]="i < screenSkippedLength">
+    <p class="image-title">{{i+1}}</p>
+    <p class="image-element"><img [attr.data-src]="'assets/images/' + screenPath + (i < 9 ? '0' + (i+1) : (i+1) ) + screenType"/></p>
   </li>
 </ul>
 <div class="control-block">
