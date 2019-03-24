@@ -1,13 +1,54 @@
 <ul class="combine-with-audio" *ngIf="detailList?.length">
   <li *ngFor="let item of detailList; let i = index;">
     <p class="title" [class.active]="item.isShowing" (click)="item.isShowing = !item.isShowing"><span>Unit {{i+1}}: </span>{{item.title}}</p>
-    <div class="inner" *ngIf="item.isShowing">
-      <audio class="audio" controls preload="none">
-        <source [src]="'assets/audio/' + audioPath + item.audioFile + audioType" type="audio/mp3">
-      </audio>
-      <p class="screenshot" *ngFor="let img of item.images">
-        <img [src]="'assets/images/' + screenshotPath + img + screenshotType"/>
-      </p>
+    <div class="inner" [class.d-none]="!item.isShowing">
+      <ul class="audio-tracks active">
+        <li [class.isFixedTop]="item.isPlaying">
+          <div class="inner">
+            <audio [id]="'item-' + i" controls [attr.loop]="loop ? loop : null"
+                   (play)="onPlayAudio(item, $event)"
+                   class="audio" controls preload="none" *ngIf="item.audioFile">
+              <source [src]="'assets/audio/' + audioPath + item.audioFile + audioType" type="audio/mp3">
+            </audio>
+          </div>
+        </li>
+        <li [ngClass]="{'isFixedTop': aud.isPlaying}" *ngFor="let aud of item.audioFiles; let aI = index;">
+          <div class="inner">
+            <p>{{aud.audioTitle}}</p>
+            <audio [id]="'item-' + i + '-aud-' + aI" [class.isFixedTop]="aud.isPlaying" controls [attr.loop]="loop ? loop : null"
+                   (play)="onPlayAudio(aud, $event)"
+                   class="audio" controls preload="none">
+              <source [src]="'assets/audio/' + audioPath + aud.audioFile + audioType" type="audio/mp3">
+            </audio>
+          </div>
+        </li>
+      </ul>
+      <ng-template [ngIf]="item.isShowing">
+        <p class="screenshot" *ngFor="let img of item.images">
+          <img [src]="'assets/images/' + screenshotPath + img + screenshotType"/>
+        </p>
+      </ng-template>
     </div>
   </li>
 </ul>
+<div class="control-block">
+  <div class="audio-controls">
+    <span class="speed-rate">Playing: <span>{{curPlayingTitle || 'None' }}</span></span>
+    <span class="speed-rate">Rate: <span>{{curSpeed | number: 0}}</span></span>
+    <div class="button-group" role="group">
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curSpeed <= minSpeed"
+              (click)="onDecreaseSpeed()"><i class="fas fa-minus"></i></button>
+      <button type="button" class="btn btn-secondary btn-control"
+              [disabled]="curSpeed >= maxSpeed"
+              (click)="onIncreaseSpeed()"><i class="fas fa-plus"></i></button>
+      <button type="button"
+              (click)="loop = !loop;" class="btn btn-secondary btn-control"
+              [class.active]="loop">
+        <i class="fas fa-sync-alt"></i></button>
+    </div>
+    <div class="button-group" role="group">
+      <button type="button" class="btn btn-secondary btn-control" title="To Top" (click)="toTop()"><i class="fas fa-arrow-up"></i></button>
+    </div>
+  </div>
+</div>

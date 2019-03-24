@@ -38,7 +38,6 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.screenArray = new Array(this.screenLength).fill(false);
-    console.log(this.screenArray);
   }
 
   ngAfterViewInit() {
