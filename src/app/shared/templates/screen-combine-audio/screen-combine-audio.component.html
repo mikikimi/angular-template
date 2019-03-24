@@ -3,7 +3,7 @@
     <p class="title" [class.active]="item.isShowing" (click)="item.isShowing = !item.isShowing"><span>Unit {{i+1}}: </span>{{item.title}}</p>
     <div class="inner" [class.d-none]="!item.isShowing">
       <ul class="audio-tracks active">
-        <li [class.isFixedTop]="item.isPlaying">
+        <li [class.isFixedTop]="item.isPlaying" *ngIf="item.audioFile">
           <div class="inner">
             <audio [id]="'item-' + i" controls [attr.loop]="loop ? loop : null"
                    (play)="onPlayAudio(item, $event)"
