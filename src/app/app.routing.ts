@@ -17,7 +17,7 @@ export const AppRoutes: Routes = [
     loadChildren: './pages/blueup/blueup.module#BlueupModule'
   },
   {
-    path: 'collins',
+    path: BaseURLs.collins,
     loadChildren: './pages/collins/collins.module#CollinsModule'
   },
   {

@@ -5,10 +5,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ScreenshotWithAudioComponent } from '@templates/screenshot-with-audio/screenshot-with-audio.component';
+import { ScreenCombineAudioComponent } from '@templates/screen-combine-audio/screen-combine-audio.component';
 
 @NgModule({
   declarations: [
-    ScreenshotWithAudioComponent
+    ScreenshotWithAudioComponent,
+    ScreenCombineAudioComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ScreenshotWithAudioComponent } from '@templates/screenshot-with-audio/s
     FormsModule,
     ReactiveFormsModule,
     TooltipModule,
-    ScreenshotWithAudioComponent
+    ScreenshotWithAudioComponent,
+    ScreenCombineAudioComponent
     // BrowserAnimationsModule
   ]
 })

@@ -1,0 +1,13 @@
+<ul class="combine-with-audio" *ngIf="detailList?.length">
+  <li *ngFor="let item of detailList; let i = index;">
+    <p class="title" [class.active]="item.isShowing" (click)="item.isShowing = !item.isShowing"><span>Unit {{i+1}}: </span>{{item.title}}</p>
+    <div class="inner" *ngIf="item.isShowing">
+      <audio class="audio" controls preload="none">
+        <source [src]="'assets/audio/' + audioPath + item.audioFile + audioType" type="audio/mp3">
+      </audio>
+      <p class="screenshot" *ngFor="let img of item.images">
+        <img [src]="'assets/images/' + screenshotPath + img + screenshotType"/>
+      </p>
+    </div>
+  </li>
+</ul>

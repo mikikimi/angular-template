@@ -3,7 +3,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 declare var $, LazyLoad: any;
 
 @Component({
-  selector: 'screenshot-with-audio',
+  selector: 'app-screenshot-with-audio',
   templateUrl: './screenshot-with-audio.component.html',
   styleUrls: ['./screenshot-with-audio.component.scss']
 })
@@ -47,7 +47,7 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
     mainScope.audioArr = $('audio');
 
     const myLazyLoad = new LazyLoad({
-      elements_selector: "img"
+      elements_selector: 'img'
     });
 
     if (this.curSpeed !== 1) {
@@ -71,7 +71,9 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
   triggerPlay() {
     const num = this.triggerPlayTrack;
-    if (num < 0 || num === this.curPlayingIndex || num > this.audioArr.length - 1) return;
+    if (num < 0 || num === this.curPlayingIndex || num > this.audioArr.length - 1) {
+      return;
+    }
 
     this.audioArr[this.curPlayingIndex].pause();
     this.curPlayingIndex = num;
@@ -79,7 +81,7 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
   }
 
   onPlayAudio(index, fileName) {
-    if (this.curPlayingIndex != -1 && this.curPlayingIndex != index) {
+    if (this.curPlayingIndex !== -1 && this.curPlayingIndex !== index) {
       this.audioArr[this.curPlayingIndex].pause();
     }
     this.curPlayingIndex = index;
@@ -102,8 +104,8 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
   }
 
   onTriggerPlayPauseAudio() {
-    if (this.audioState == 0) {
-      if (this.curPlayingIndex == -1) {
+    if (this.audioState === 0) {
+      if (this.curPlayingIndex === -1) {
         this.curPlayingIndex = 0;
       }
       this.audioArr[this.curPlayingIndex].play();
@@ -130,7 +132,9 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
   onIncreaseSpeed() {
     const self = this;
-    if (this.curSpeed >= this.maxSpeed) return;
+    if (this.curSpeed >= this.maxSpeed) {
+      return;
+    }
     this.curSpeed += 0.1;
 
     $.each(this.audioArr, function() {
@@ -140,7 +144,9 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
   onDecreaseSpeed() {
     const self = this;
-    if (this.curSpeed <= this.minSpeed) return;
+    if (this.curSpeed <= this.minSpeed) {
+      return;
+    }
     this.curSpeed -= 0.1;
 
     $.each(this.audioArr, function() {
@@ -150,9 +156,11 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
 
 
   onBackwardPlayingFile() {
-    if (this.curPlayingIndex <= 0) return;
+    if (this.curPlayingIndex <= 0) {
+      return;
+    }
 
-    if (this.curPlayingIndex != -1) {
+    if (this.curPlayingIndex !== -1) {
       this.audioArr[this.curPlayingIndex].pause();
     }
 
@@ -161,8 +169,10 @@ export class ScreenshotWithAudioComponent implements OnInit, AfterViewInit {
   }
 
   onForwardPlayingFile() {
-    if (this.curPlayingIndex >= this.audioArr.length - 1) return;
-    if (this.curPlayingIndex != -1) {
+    if (this.curPlayingIndex >= this.audioArr.length - 1) {
+      return;
+    }
+    if (this.curPlayingIndex !== -1) {
       this.audioArr[this.curPlayingIndex].pause();
     }
     this.curPlayingIndex++;

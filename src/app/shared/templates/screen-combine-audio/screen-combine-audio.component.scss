@@ -1,0 +1,38 @@
+.combine-with-audio {
+  list-style: none;
+  margin: 30px 0 50px;
+  padding: 30px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-top: 1px solid #eee;
+  li {
+    position: relative;
+  }
+  .title {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #eee;
+    padding: 8px 20px;
+    margin-top: 20px;
+    &:hover,
+    &.active {
+      background: #bbb;
+    }
+  }
+  .audio {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 20px auto;
+  }
+  .screenshot {
+    border-bottom: 1px dotted #eee;
+    margin: 15px 0 25px;
+  }
+  img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+  }
+}

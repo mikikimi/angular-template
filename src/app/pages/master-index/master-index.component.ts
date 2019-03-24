@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BaseURLs, OxfordURLs } from 'app/routes';
+import {BaseURLs, CollinsURLs, OxfordURLs} from 'app/routes';
 
 @Component({
   selector: 'app-index',
@@ -11,6 +11,7 @@ export class MasterIndexComponent implements OnInit {
   arr = Array;
   url = BaseURLs;
   _oxfordURLs = OxfordURLs;
+  _collinsURLs = CollinsURLs;
 
   constructor() { }
 
