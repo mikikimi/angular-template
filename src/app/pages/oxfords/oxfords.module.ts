@@ -9,6 +9,7 @@ import { TelephoningComponent } from './telephoning/telephoning.component';
 import { MeetingComponent } from './meeting/meeting.component';
 import { SocializingComponent } from './socializing/socializing.component';
 import { ReadNDiscoverDetailComponent } from './read-n-discover/read-n-discover-detail.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { ReadNDiscoverDetailComponent } from './read-n-discover/read-n-discover-
     TelephoningComponent,
     MeetingComponent,
     SocializingComponent,
-    ReadNDiscoverDetailComponent
+    ReadNDiscoverDetailComponent,
   ],
   imports: [
+    CommonModule,
     RouterModule.forChild(OxfordsRoutes),
     SharedModule
   ]

@@ -1,3 +1,11 @@
-<p>
-  read-n-discover works!
-</p>
+<h1 class="main-title">Oxford Read and Discovers</h1>
+<a class="text-dark" [href]="url.masterIndex"><i class="fas fa-chevron-circle-left"></i> Back to Index</a>
+<div class="group-block">
+  <div class="content" *ngFor="let level of oContext">
+    <div class="list-heading"><h3 class="list-title">Level {{level.level}}</h3></div>
+    <ul class="list">
+      <li *ngFor="let levelItem of level.levelList">
+        <p><a [href]="oxfordUrl.readNDiscover + '/' + levelItem.unitNumber">Level {{levelItem.unitNumber}} - {{levelItem.unitName}}</a></p></li>
+    </ul>
+  </div>
+</div>

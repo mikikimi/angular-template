@@ -20,6 +20,7 @@ import { MasterIndexComponent } from '@pages/master-index/master-index.component
     MasterIndexComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     SharedModule.forRoot(),

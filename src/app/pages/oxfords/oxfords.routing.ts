@@ -6,6 +6,7 @@ import { SocializingComponent } from '@pages/oxfords/socializing/socializing.com
 import { TelephoningComponent } from '@pages/oxfords/telephoning/telephoning.component';
 import { ReadNDiscoverComponent } from '@pages/oxfords/read-n-discover/read-n-discover.component';
 import { BaseURLs, OxfordURLsNoPrefix } from 'app/routes';
+import { ReadNDiscoverDetailComponent } from '@pages/oxfords/read-n-discover/read-n-discover-detail.component';
 
 export const OxfordsRoutes: Routes = [
   {
@@ -31,6 +32,10 @@ export const OxfordsRoutes: Routes = [
   }, {
     path: OxfordURLsNoPrefix.readNDiscover,
     component: ReadNDiscoverComponent,
+    data: { title: 'Oxfords Read and Discover' }
+  }, {
+    path: OxfordURLsNoPrefix.readNDiscover + '/:unitNumber',
+    component: ReadNDiscoverDetailComponent,
     data: { title: 'Oxfords Read and Discover' }
   }
 ];
